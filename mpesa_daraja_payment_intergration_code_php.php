@@ -35,7 +35,7 @@ function lipaNaMpesaPassword()
             'PartyA' => $user_phone, // replace this with your phone number
             'PartyB' => 174379,
             'PhoneNumber' => $user_phone, // replace this with your phone number
-            'CallBackURL' => 'https://fomis.kibucu.org/fomis/test.php',
+            'CallBackURL' => 'https://fomis.kibucu.org/fomis/test.php', // replace with your endpoint
             'AccountReference' => "FOMIS",
             'TransactionDesc' => "FOMIS"
         ];
@@ -70,7 +70,7 @@ function lipaNaMpesaPassword()
         $access_token=json_decode($curl_response);
         return $access_token->access_token;
     }
-    $user_phone=254702822379; // user the phone number to pay
+    $user_phone=254702822370; // user the phone number to pay
     $user_amount=1; // enter amount
     $response = customerMpesaSTKPush($user_phone,$user_amount);
 
