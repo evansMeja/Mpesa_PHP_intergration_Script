@@ -54,8 +54,8 @@ function lipaNaMpesaPassword()
 
     function generateAccessToken()
     {
-        $consumer_key="";
-        $consumer_secret="";
+        $consumer_key=""; // use your consumer Key
+        $consumer_secret=""; // user your consumer Secret
         $credentials = base64_encode($consumer_key.":".$consumer_secret);
 
         $url = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials";
@@ -70,8 +70,8 @@ function lipaNaMpesaPassword()
         $access_token=json_decode($curl_response);
         return $access_token->access_token;
     }
-    $user_phone=254702822379;
-    $user_amount=1;
+    $user_phone=254702822379; // user the phone number to pay
+    $user_amount=1; // enter amount
     $response = customerMpesaSTKPush($user_phone,$user_amount);
 
       echo $response;
